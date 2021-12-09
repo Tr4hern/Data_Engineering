@@ -1,4 +1,5 @@
 import redis
+import pandas as pd
 from flask import Flask
 
 app = Flask(__name__)
@@ -21,24 +22,28 @@ def get_accuracy():
     good_ones = 0
     cpt = 0
 
-    with open('dataset.txt') as file:
-        for line in file.readlines():
-            score, text = line.strip().split('\t')
+    df = pd.read_csv('Reddit_Data.csv')
 
-            score = float(score)
-            if score >= 0.05:
-                sentiment =  "Positive"
-            else :
-                if score <= -0.05:
-                    sentiment =  "Negative"
-                else:
-                    sentiment =  "Neutral"
+    for i in range(0, len(df)):
+        text = df["clean_comment"][i]
+        score = df["category"][0]
 
-            predicted_sentiment = vader_analyse(text)
+        # Return the sentiment based on the column "category"
+        if score == 1:
+            sentiment =  "Positive"
+        else :
+            if score == -1:
+                sentiment =  "Negative"
+            else:
+                sentiment =  "Neutral"
+    
+        # Return the sentiment based on the column "clean_comment"
+        predicted_sentiment = vader_analyse(text)
 
-            good_ones += 1
-            if sentiment == predicted_sentiment:
-                cpt += 1
+        # calculate the accuracy
+        good_ones += 1
+        if sentiment == predicted_sentiment:
+            cpt += 1
 
     return (good_ones / cpt)
 
