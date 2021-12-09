@@ -6,9 +6,9 @@ app = Flask(__name__)
 cache = redis.Redis(host = 'redis', port = 6379)
 
 def vader_analyse(text):
-    Analyzeranalyser = SentimentIntensityAnalyzer()
-    score = sentiment_analyzer_scores(text)
-    return score
+    analyzeranalyser = SentimentIntensityAnalyzer()
+    score = analyser.polarity_scores(text)
+    return "{:-<40} {}".format(text, str(score))
 
 @app.route('/')
 def index():
