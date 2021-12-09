@@ -4,3 +4,4 @@ vaderSentiment
 vader
 pytest
 requests
+pandas
