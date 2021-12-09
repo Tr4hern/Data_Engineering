@@ -26,8 +26,8 @@ def get_accuracy():
     df = pd.read_csv('Reddit_Data.csv')
 
     for i in range(0, len(df)):
-        text = df["clean_comment"][i]
-        score = df["category"][0]
+        text = str(df["clean_comment"][i])
+        score = int(df["category"][i])
 
         # Return the sentiment based on the column "category"
         if score == 1:
@@ -42,9 +42,9 @@ def get_accuracy():
         predicted_sentiment = vader_analyse(text)
 
         # calculate the accuracy
-        good_ones += 1
+        cpt += 1
         if sentiment == predicted_sentiment:
-            cpt += 1
+            good_ones += 1
 
     return (good_ones / cpt)
 
