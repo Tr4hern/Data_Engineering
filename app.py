@@ -1,10 +1,11 @@
 import redis
 import pandas as pd
-from flask import Flask
+from flask import Flask, request, jsonify
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 app = Flask(__name__)
 cache = redis.Redis(host = 'redis', port = 6379)
+
 
 def vader_analyse(text):
     analyser = SentimentIntensityAnalyzer()
@@ -16,6 +17,7 @@ def vader_analyse(text):
     if score <= -0.05:
         return "Negative"
     return "Neutral"
+
 
 
 def get_accuracy():
@@ -59,6 +61,17 @@ def index():
 
                 <script>
                 function getInfo() {
-                    document.getElementById("result").innerHTML = vader_analyse(document.getElementById("text").value);
+                    var message = document.getElementById("text").value
+                    var analyzing = fetch('http://localhost:5000/sentiment?message='+message)
+                    .then((analyzing) => analyzing.json())
+                    .then((json) => {
+                        document.getElementById("result").innerHTML = json
+                        console.log(json)
+                    })
                 }
                 </script>'''
+
+@app.route('/sentiment', methods=['GET'])
+def sentiment():
+    return jsonify("{}".format(vader_analyse(request.args.get("message"))))
+
