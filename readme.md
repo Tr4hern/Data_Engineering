@@ -1,7 +1,7 @@
 # Data Engineering Project : Sentiment Analysis Application
 
 ## Link to the AirTable
-[https://airtable.com/our_airtable](https://airtable.com/appj4a0O1Fo0jPTlP/tblsKaA2HBamQ73Au/viwkzXCh7m9G6lU9E?blocks=hide)
+![air_table.png](air_table.png)
 
 ## Run the docker image
 
