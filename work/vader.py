@@ -8,8 +8,10 @@ def vader_analyse(text):
 
     if score >= 0.05:
         return "Positive"
+
     if score <= -0.05:
         return "Negative"
+        
     return "Neutral"
 
 
