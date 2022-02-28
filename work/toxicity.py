@@ -10,5 +10,5 @@ def detoxify_analyse(text):
 
 
 def detoxify_json_to_string(json_file):
-    return json.dumps(json_file)
+    return json.dumps(str(json_file))
 
