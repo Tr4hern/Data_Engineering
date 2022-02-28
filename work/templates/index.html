@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toxicity Analizer</title>
+    <script>
+
+        function getInfo() {
+            var message = document.getElementById("text").value
+
+            var analyzing = fetch('http://localhost:5000/sentiment?message='+message)
+            .then((analyzing) => analyzing.json())
+            .then((json) => {
+
+                document.getElementById("result").innerHTML = json
+                console.log(json)
+            })
+        }
+
+    </script>
+
+    <style>
+        html {
+            background-color: rgba(0, 0, 0, 0.92);
+        }
+
+        body {
+            width: 600px;
+            height: 100vh;
+            margin: auto;
+            padding: 40px;
+            display: flex;
+            flex-flow: column nowrap;
+            align-content: center;
+
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #result {
+            padding-top: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .current {
+            opacity: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h1> Sentence Sentiment Analysis </h1>
+
+<!-- Input -->
+<label for="text"> Enter the sentence you want to analyse:</label>
+<input type="text" id="text" name="text" value=""><br>
+<button type="button" onclick="getInfo()"> Analyse </button><br>
+
+<!-- Result -->
+<div id="result-div">
+    <p id="result"></p>
+</div>
+
+</body>
+</html>
