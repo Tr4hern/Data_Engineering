@@ -16,7 +16,7 @@ def beautitful_text(text):
 
 @app.route('/')
 def index():
-    return  render_template('index.html')
+    return render_template('index.html')
 
 
 @app.route('/sentiment', methods=['GET'])
