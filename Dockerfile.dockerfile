@@ -18,3 +18,4 @@ CMD ["flask", "run"]
 WORKDIR /usr/src/app/work
 
 RUN pytest ./unit_tests.py
+RUN pytest ./integration_tests.py

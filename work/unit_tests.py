@@ -1,4 +1,3 @@
-import vader
 import toxicity
 
 def test_toxicity_json():
