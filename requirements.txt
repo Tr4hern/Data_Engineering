@@ -4,3 +4,4 @@ vaderSentiment
 pytest
 requests
 pandas
+detoxify
