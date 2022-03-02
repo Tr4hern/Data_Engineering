@@ -1,3 +1,5 @@
+import warnings
+warnings.filterwarnings('ignore')
 import app
 import toxicity
 import json

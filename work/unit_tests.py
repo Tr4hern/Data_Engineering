@@ -1,3 +1,5 @@
+import warnings
+warnings.filterwarnings('ignore')
 import toxicity
 
 def test_toxicity_json():
