@@ -1,7 +1,7 @@
 # Data Engineering Project : Sentiment Analysis Application
 
 ## Link to the AirTable
-![air_table.png](air_table.png)
+### Trello link : https://trello.com/b/HUO4qf0t/dataengineering
 
 ## Run the docker image
 
