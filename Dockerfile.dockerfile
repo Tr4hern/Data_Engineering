@@ -14,3 +14,7 @@ WORKDIR /usr/src/app
 EXPOSE 5000
 
 CMD ["flask", "run"]
+
+WORKDIR /usr/src/app/work
+
+RUN pytest ./test.py
