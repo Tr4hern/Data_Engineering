@@ -15,4 +15,4 @@ def test_status():
     assert requests.get("http://localhost:5000").status_code == 200
 
 def test_stresstest():
-    assert get_pinged("http://localhost:5000", 100) <= 3
+    assert get_pinged("http://127.0.0.1:5000", 100) <= 0.1
