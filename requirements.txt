@@ -1,7 +1,5 @@
 flask==1.1.2
 redis==3.5.3
-vaderSentiment
 pytest
 requests
-pandas
 detoxify
