@@ -12,5 +12,5 @@ receivers:
     smarthost: smtp.gmail.com:587
     auth_username: spammenotnameho@gmail.com
     auth_identity: spammenotnameho@gmail.com
-    auth_password: 'pffyqftzylkcbpra'
+    auth_password: ''
     send_resolved: true
