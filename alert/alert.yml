@@ -1,0 +1,16 @@
+route:
+  receiver: 'mail'
+  repeat_interval: 4h
+  group_by: [ alertname ]
+
+
+receivers:
+- name: 'mail'
+  email_configs:
+  - to: spammenotnameho@gmail.com
+    from: spammenotnameho@gmail.com
+    smarthost: smtp.gmail.com:587
+    auth_username: spammenotnameho@gmail.com
+    auth_identity: spammenotnameho@gmail.com
+    auth_password: 'pffyqftzylkcbpra'
+    send_resolved: true
