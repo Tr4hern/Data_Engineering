@@ -3,3 +3,4 @@ redis==3.5.3
 pytest
 requests
 detoxify
+prometheus-client==0.8.0

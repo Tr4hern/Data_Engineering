@@ -1,6 +1,9 @@
 import redis
 import toxicity
 from flask import Flask, request, jsonify, render_template
+from prometheus_client import start_http_server, Counter, Gauge, Summary, Histogram
+
+start_http_server(8010)
 
 app = Flask(__name__)
 cache = redis.Redis(host = 'redis', port = 6379)

@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile.dockerfile
     ports: 
       - "5000:5000"
+      - "8010:8010"
   redis:
     image: "redis:alpine"
     container_name: redis
