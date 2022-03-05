@@ -39,13 +39,25 @@ docker-compose up
 #### If you want to only run the tests, you may need to get the project locally (check the previous part).
 When you have it, go to the place where you saved (you need to be in the "work" directory) it using your terminal and run the command line:
 ```cmd
-pytest ./test.py
+pytest ./unit_tests.py
+pytest ./integration_tests.py
+pytest ./functionnal_tests.py
+pytest ./end-to-end_tests.py
 ```
 #### You may need to install some python libraries, using:
 ```cmd
-pip install pytest
-pip install pandas
-pip install vaderSentiment
+pip install -r requirements.txt
 ```
-#### By going into the test.py you will be able to tests different aspects. For example, by default, we check the first 2000 lines of our csv have a accuracy above 60% with our model. You change both the accuracy check and the number of lines checked.
-#### We check only the accuracy at 60% because it was most of the time around 70% and we needed the test to pass if we wanted the image to be built while running the tests.
+#### For the different localhost, we have :
+- #### localhost:5000 for the app
+- #### localhost:9090 for prometheus
+- #### localhost:8010 for the metrics of prometheus
+- #### localhost:3000 for grafana
+
+#### The different metrics to monitor on grafana are :
+- ####  for cpu usage
+- ####  for memory usage
+- ####  for disk space usage
+- ####  for response time
+- ####  for requests count
+- ####  for exceptions

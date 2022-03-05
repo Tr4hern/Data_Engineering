@@ -1,7 +1,7 @@
 import redis
 import toxicity
 from flask import Flask, request, jsonify, render_template
-from prometheus_client import start_http_server, Counter, Gauge, Summary, Histogram
+from prometheus_client import start_http_server
 
 start_http_server(8010)
 

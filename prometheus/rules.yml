@@ -1,5 +1,5 @@
 groups:
-  - name: example
+  - name: alerts
     rules:
       - alert: InstanceDown
         expr: up == 0
@@ -21,6 +21,6 @@ groups:
         expr: job:request_latency_seconds:mean5m{job="myjob"} > 0.5
         for: 10m
       
-       - alert: HostHighCpuLoad
-          expr: (sum by (instance) (irate(node_cpu{job="node_exporter_metrics",mode="idle"}[5m]))) > 80
-          for: 5m
+      - alert: HostHighCpuLoad
+        expr: (sum by (instance) (irate(node_cpu{job="node_exporter_metrics",mode="idle"}[5m]))) > 80
+        for: 5m
