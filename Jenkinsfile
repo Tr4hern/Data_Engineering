@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Building') {
             steps {
-                bat "docker-compose up"
+                bat "docker-compose build"
             }
         }
         stage('Testing'){
