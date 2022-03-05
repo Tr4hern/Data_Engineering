@@ -3,7 +3,12 @@ pipeline {
     stages {
         stage('Building') {
             steps {
-                bat "docker-compose build"
+                bat "docker-compose up"
+            }
+        }
+        stage('Testing'){
+            steps {
+                bat "python -m pytest work/unit_tests.py"
             }
         }
         stage('Pushing into Release') {
