@@ -49,10 +49,10 @@ pytest ./end-to-end_tests.py
 pip install -r requirements.txt
 ```
 #### For the different localhost, we have :
-- #### localhost:5000 for the app
-- #### localhost:9090 for prometheus
-- #### localhost:8010 for the metrics of prometheus
-- #### localhost:3000 for grafana
+- #### [localhost:5000](http://localhost:5000) for the app
+- #### [localhost:9090](http://localhost:9090) for prometheus
+- #### [localhost:8010](http://localhost:8010) for the metrics of prometheus
+- #### [localhost:3000](http://localhost:3000) for grafana
 
 #### The different metrics to monitor on grafana are :
 - ####  for cpu usage
